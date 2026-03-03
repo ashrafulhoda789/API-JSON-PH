@@ -6,21 +6,24 @@ const loadPost = () => {
     .then((data) => displayPost(data))
 };
 
+// {userId: 1, id: 1, title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit', body: 'quia et suscipit\nsuscipit recusandae consequuntur …strum rerum est autem sunt rem eveniet architecto'}
+
 const displayPost = (posts) => {
-
-    // 1. get container
-    const postContainer =  document.getElementById('post-container');
-    // console.log(postContainer);
-
+    // 1. get the container and empty it
+    const postContainer = document.getElementById('post-container');
+    postContainer.innerHTML = "";
 
     posts.forEach(post => {
-        // console.log(post.body);
-        // 2. create HTML element
-        const li = document.createElement('li');
-        li.innerText = post.title;
-        // console.log(li);
+        // 2. create element
+        const postCard = document.createElement("div");
+        postCard.innerHTML = `
+            <div class="post-card">
+                <h2>This is a Sample title</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam repellendus minus quas, nam in explicabo aspernatur doloribus expedita! At, dolorem.</p>
+            </div>
+        `;
 
-        // 3. add li into container
-        postContainer.appendChild(li);
+        // 3. append postcard
+        postContainer.appendChild(postCard);
     })
 }
