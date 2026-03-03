@@ -18,12 +18,14 @@ const displayPost = (posts) => {
         const postCard = document.createElement("div");
         postCard.innerHTML = `
             <div class="post-card">
-                <h2>This is a Sample title</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam repellendus minus quas, nam in explicabo aspernatur doloribus expedita! At, dolorem.</p>
+                <h2>${post.title}</h2>
+                <p>${post.body}</p>
             </div>
         `;
 
         // 3. append postcard
         postContainer.appendChild(postCard);
     })
-}
+};
+
+loadPost();
